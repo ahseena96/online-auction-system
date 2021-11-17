@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Travel Website</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS data -->
+    <link rel="stylesheet" href="travel_styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    
+</head>
+
+<body style="background-image: url('sellersuccessfull.jpg'); background-size: cover;">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <div class="container-fluid">
+        <div id="first" class="row">
+            <div class="col-md-12" id="first_row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+            <path
+              fill-rule="evenodd"
+              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+            />
+          </svg>
+                <label class="first">Logout</label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+            />
+          </svg>
+                <label class="first">Profile</label>
+                
+                
+            </div>
+        </div>
+         <div class="row" id="second_row">
+            <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+ <h1> <a class="navbar-brand" href="#" id="heading" style="color: blanchedalmond;">Online Auctions Today</a></h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      
+      <li class="pull-right" >
+        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn" id="submitButton" type="submit">Search</button>
+    </form>
+  </li>
+    </ul>
+    
+  </div>
+</nav>
+</div></div>
+     <!--
+<div class="row" id="second_row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand textColour" id="heading">Share Your Travels</a>
+                    <div class="navbar" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active top">
+                                <a class="nav-link textColour" href="#">Home <span class="sr-only">(current)</span></a>
+                  
+                </li>
+                <li class="nav-item top">
+                  <a class="nav-link textColour" href="#" >About</a>
+                            </li>
+                            <li class="nav-item top">
+                                <a class="nav-link textColour" href="#">Contact</a>
+                            </li>
+                            <li class="nav-item dropdown" id="li-pad">
+                                <a class="nav-link dropdown-toggle textColour" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Browse
+                  </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Continents</a>
+                                    <a class="dropdown-item" href="#">Countries</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button id="submitButton" class="btn" type="submit">
+                  Submit
+                </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+-->
+        <div class="row" id="third_row">
+            <div class="col-md-2 list-elements">
+                <div class="list-group">
+                  <form action="/action_page.php">
+                    <h5 style="color: blue"> Product categories </h5>
+  <input type="checkbox" id="electronics" name="electronics" value="Phone">
+  <label for="vehicle1"> Electronics </label><br>
+  <input type="checkbox" id="A&C" name="Arts&Crafts" value="Painting">
+  <label for="vehicle2"> Arts and crafts</label><br>
+  <input type="checkbox" id="Sports Memorabilia" name="bat" value="Bat">
+  <label for="vehicle3">Sports Memorabilia </label><br>
+  <input type="checkbox" id="Antiques" name="ant" value="ant">
+  <label for="vehicle3"> Antiques </label><br>
+  <input type="checkbox" id="Jewelry" name="jewel" value="jewel">
+  <label for="vehicle3"> Jewelry </label><br>
+  <label style="color: blue;"> see more... </label><br>
+
+
+  
+  
+</form>
+                    <!--<a href="#" class="list-group-item active"> Continents </a>
+                    <a href="#" class="list-group-item">Africa</a>
+                    <a href="#" class="list-group-item">Asia</a>
+                    <a href="#" class="list-group-item">Europe</a>
+                    <a href="#" class="list-group-item">North America</a>
+                    <a href="#" class="list-group-item">South America</a>-->
+                </div>
+                <br>
+                <div class="list-group">
+                    <!--<a href="#" class="list-group-item active"> Popular Countries </a>
+                    <a href="#" class="list-group-item">Canada</a>
+                    <a href="#" class="list-group-item">France</a>
+                    <a href="#" class="list-group-item">Italy</a>
+                    <a href="#" class="list-group-item">Germany</a>
+                    <a href="#" class="list-group-item">Ghana</a>
+                    <a href="#" class="list-group-item">Greece</a>
+                    <a href="#" class="list-group-item">Hungary</a>
+                    <a href="#" class="list-group-item">Spain</a>
+                    <a href="#" class="list-group-item">United States</a>
+                    <a href="#" class="list-group-item">United Kingdom</a>-->
+                    <form action="/action_page.php">
+                    <h5 style="color: blue"> Price range </h5>
+<input type="checkbox" id="less than 100" name="price1" value="100">
+<label for="price1"> Less than $100 </label><br>
+  <input type="checkbox" id="101to500" name="50to100" value="101to500">
+  <label for="price2"> $101 to $500 </label><br>
+  <input type="checkbox" id="501to1000" name="501to1000" value="501to1000">
+  <label for="vehicle3"> $501 to $1000</label><br>
+  <input type="checkbox" id="1000to1500" name="1000to1500" value="1000to1500">
+  <label for="vehicle3"> $1001 to $1500 </label><br>
+  <input type="checkbox" id="1501to2000" name="1501to2000" value="1501to2000">
+  <label for="vehicle3"> $1501 to $2000  </label><br>
+
+                </div>
+            </div>
+  <div class="row">
+  <div class="column">
+    <img src="image1.png" alt="picture" style="width:100%; padding-top: 30px; padding-left: 20px;">
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 30px; font-style: oblique;"> Product name:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> Fall colorful painting </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 30px; font-style: oblique;"> Current highest bid price:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> $85 </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 30px; font-style: oblique;"> Closes: <pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> 11/03/2021 12:00 AM CST </p></p>
+    </div>
+    <div class="row">
+      <button type = "button" class="btn-btn-primary" style="color: blueviolet; margin-left: 60px; 
+      border: blueviolet; border-style: groove; width: 30%;"> View details</button>
+    </div>
+  </div>
+  <div class="column">
+
+    <img src="image 2.png" alt="picture" style="width:100%; height: 50%; padding-left: 20px;
+    padding-top: 30px;">
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 30px; font-style: oblique;"> Product name:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> Feirceful Lion </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 30px; font-style: oblique;"> Current highest bid price:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> $100 </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 30px; font-style: oblique;"> Closes: <pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> 11/10/2021 12:00 AM CST </p></p>
+    </div>
+    <div class="row">
+      <button type = "button" class="btn-btn-primary" style="color: blueviolet; margin-left: 60px; 
+      border: blueviolet; border-style: groove;"> View details</button>
+    </div>
+  </div>
+  <div class="column">
+    <img src="image 3.png" alt="picture" style="width:100%; padding-left: 50px; padding-top: 40px;">
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 60px; font-style: oblique;"> Product name:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> Woman sitting by window </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 60px; font-style: oblique;"> Current highest bid price:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> $150 </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 60px; font-style: oblique;"> Closes: <pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> 11/07/2021 12:00 AM CST </p></p>
+    </div>
+    <div class="row">
+      <button type = "button" class="btn-btn-primary" style="color: blueviolet; margin-left: 120px; 
+      border: blueviolet; border-style: groove; width: 30%;"> View details</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <img src="image 4.png" alt="picture" style="width:120%; height: 50%; padding-top: 30px; padding-left: 220px;">
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 240px; font-style: oblique;"> Current highest bid price:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> $100 </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 240px; font-style: oblique;"> Closes: <pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> 11/10/2021 12:00 AM CST </p></p>
+    </div>
+    <div class="row">
+      <button type = "button" class="btn-btn-primary" style="color: blueviolet; margin-left: 270px; 
+      border: blueviolet; border-style: groove; width: 30%;"> View details</button>
+    </div>
+  </div>
+  <div class="column">
+    <img src="image 5.png" alt="picture" style="width:70%; height: 50%; padding-top: 30px; padding-left: 220px;">
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 240px; font-style: oblique;"> Current highest bid price:<pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> $100 </p></p>
+    </div>
+    <div class="row">
+      <p style="color: blueviolet; margin-left: 240px; font-style: oblique;"> Closes: <pre> </pre>  <p style="color: maroon; font-weight: 30pt;"> 11/10/2021 12:00 AM CST </p></p>
+    </div>
+    <div class="row">
+      <button type = "button" class="btn-btn-primary" style="color: blueviolet; margin-left: 270px; 
+      border: blueviolet; border-style: groove; width: 30%;"> View details</button>
+    </div>
+  </div>
+
+  
+    
+
+            
+        
+</body>
+
+</html>
+
