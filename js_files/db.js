@@ -2,7 +2,7 @@ const Pool  = require("pg").Pool;
 
 const pool = new Pool({
     user: "aneeshad",
-    database: "hsdb",
+    database: "onlineAuctionSystem",
     host: "localhost",
     port: 5432
 });
