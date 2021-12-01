@@ -2,7 +2,7 @@ DROP DATABASE onlineauctionsystem;
 CREATE DATABASE onlineauctionsystem;
 \c onlineauctionsystem;
 CREATE TABLE wallet (
-	wallet_id SERIAL PRIMARY KEY,
+	wallet_id int PRIMARY KEY,
 	wallet_amount int
 );
 

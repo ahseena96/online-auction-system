@@ -26,7 +26,7 @@ app.get("/products/:cid", async (req, res) => {
 
 // show bid prods of a user - active (home) page of buyer user
 
-app.get("/:uid", async (req, res) => {
+app.get("/buyer/:uid", async (req, res) => {
     const allproducts = await pool.query("select p.name, p.description, p.bid_expiry, p.image_name, bp.bid_price from biddingproduct as bp inner join product as p where bp.buyer_id = " + req.params.uid + " and bid_expiry <= CURRENT_TIME;");
     res.json(allproducts.rows);
     // console.log(req.body);
@@ -36,11 +36,18 @@ app.get("/:uid", async (req, res) => {
 // app.post
 
 // show sold prods for seller (given id)
+app.get("/seller/:uid", async (req, res) => {
+    const allproducts = await pool.query("select p.name, p.description, p.image_name, sp.selling_price from soldproduct as sp inner join product as p where sp.pid = p.pid and p.seller_id = " + req.params.uid + ";");
+    res.json(allproducts.rows);
+    // console.log(req.body);
+});
 
 // insert into table
 // this will correspond to a login form
 // buyer sign-up
 app.post("/buyer", async (req, res) => {
+    // check if the wallet id exists already => user already registered as buyer
+    // user enters the wallet id
 
     // console.log(req.body);
     // const {username} = req.body.uname;
@@ -51,9 +58,9 @@ app.post("/buyer", async (req, res) => {
     // const {address} = req.body.address;
     // const {phone} = req.body.phone;
     console.log(req.body);
-    const loginUser= await pool.query("insert into buyers (usermail, userid, password, address, fullname, phone) values ('"+ req.body.usermail + "', " + req.body.userid + ", '" + req.body.password + "', '" + req.body.address + "', '" + req.body.fname + "', " + req.body.phone + ") returning *");
+    const wallet = await pool.query("if not exists (select * from wallet where wallet_id = " + req.body.walletid + ") begin insert into wallet (wallet_id, wallet_amount) values (" + req.body.walletid + ", " + req.body.amount + ");");
+    const loginUser = await pool.query("insert into buyers (usermail, userid, password, address, fullname, phone, wallet_id) values ('"+ req.body.usermail + "', " + req.body.userid + ", '" + req.body.password + "', '" + req.body.address + "', '" + req.body.fname + "', " + req.body.phone + ", " + req.body.walletid + ") returning *");
     res.json(loginUser.rows);
-    // add amount and add to wallet.. (users enter the id themselves)
 });
 
 
@@ -61,7 +68,9 @@ app.post("/buyer", async (req, res) => {
 // this will correspond to a login form
 // seller sign-up
 app.post("/seller", async (req, res) => {
-
+    // check if the wallet id exists already => user already registered as buyer
+    // user enters the wallet id
+    const wallet = await pool.query("if not exists (select * from wallet where wallet_id = " + req.body.walletid + ") begin insert into wallet (wallet_id, wallet_amount) values (" + req.body.walletid + ", " + req.body.amount + ") end;");
     const loginUser= await pool.query("insert into seller (usermail, userid, password, address, fullname, phone, wallet_id) values ('"+ req.body.usermail + "', '" + req.body.userid + "', '" + req.body.password + "', '" + req.body.address + "', '" + req.body.fname + "', " + req.body.phone + ") returning *");
     res.json(loginUser.rows);
 });
