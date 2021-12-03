@@ -1,14 +1,14 @@
-DROP DATABASE onlineAuctionSystem;
-CREATE DATABASE onlineAuctionSystem;
-
+DROP DATABASE onlineauctionsystem;
+CREATE DATABASE onlineauctionsystem;
+\c onlineauctionsystem;
 CREATE TABLE wallet (
-	wallet_id int SERIAL PRIMARY KEY,
+	wallet_id int PRIMARY KEY,
 	wallet_amount int
 );
 
 CREATE TABLE buyers (
 	usermail varchar(40) UNIQUE NOT NULL, 
-	userid int SERIAL PRIMARY KEY,
+	userid SERIAL PRIMARY KEY,
 	password varchar(40) NOT NULL,
 	address varchar(40),
 	fullname varchar(40),
@@ -18,7 +18,7 @@ CREATE TABLE buyers (
 
 CREATE TABLE sellers (
 	usermail varchar(40) UNIQUE NOT NULL, 
-	userid int SERIAL PRIMARY KEY,
+	userid SERIAL PRIMARY KEY,
 	password varchar(40) NOT NULL,
 	address varchar(40),
 	fullname varchar(40),
@@ -28,7 +28,7 @@ CREATE TABLE sellers (
 
 CREATE TABLE admin (
 	usermail varchar(40) UNIQUE NOT NULL, 
-	userid int SERIAL PRIMARY KEY,
+	userid SERIAL PRIMARY KEY,
 	password varchar(40) NOT NULL,
 	address varchar(40),
 	fullname varchar(40),
@@ -36,19 +36,19 @@ CREATE TABLE admin (
 );
 
 CREATE TABLE category (
-	category_id int SERIAL PRIMARY KEY,
+	category_id SERIAL PRIMARY KEY,
 	category_type varchar(40)
 );
 
 CREATE TABLE product (
-	starting_price int,
-	pid SERIAL int,
+	pid SERIAL PRIMARY KEY,
 	seller_id int references sellers(userid) on delete cascade,
+	starting_price int,
 	name varchar(40),
 	description varchar(100),
 	bid_expiry timestamp,
 	category_id int references category(category_id) on delete cascade,
-	PRIMARY KEY (pid, seller_id)
+	image_name varchar(40)
 );
 
 CREATE TABLE soldproduct (
@@ -56,7 +56,8 @@ CREATE TABLE soldproduct (
 	buyer_id int references buyers(userid) on delete cascade,
 	selling_price int,
 	purchase_date date,
-	PRIMARY KEY (pid, buyer_id)
+	CONSTRAINT soldprodPK
+		PRIMARY KEY (pid, buyer_id)
 );
 
 CREATE TABLE biddingproduct (
@@ -64,6 +65,6 @@ CREATE TABLE biddingproduct (
 	bid_price int,
 	buyer_id int references buyers(userid) on delete cascade,
 	bidding_date date,
-	PRIMARY KEY (pid, buyer_id)
+	CONSTRAINT bidprodPK
+		PRIMARY KEY (pid, buyer_id)
 );
-
